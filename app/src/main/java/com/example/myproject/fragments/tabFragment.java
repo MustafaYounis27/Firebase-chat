@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -52,8 +53,7 @@ public class tabFragment extends Fragment
         viewpagerAdapter adapter = new viewpagerAdapter ( this,fragments );
         viewPager.setAdapter ( adapter );
 
-//        new TabLayoutMediator(tabLayout, viewPager,(tab, position) -> tab.setText("OBJECT " + (position + 1))
-//        ).attach();
+
 
     }
 

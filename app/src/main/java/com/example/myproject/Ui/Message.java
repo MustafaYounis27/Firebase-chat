@@ -40,7 +40,9 @@ import com.google.firebase.storage.UploadTask;
 import com.mikhaellopez.circularimageview.CircularImageView;
 import com.squareup.picasso.Picasso;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class Message extends AppCompatActivity
@@ -177,8 +179,8 @@ public class Message extends AppCompatActivity
     private void sendMsg(String msg)
     {
         String key = databaseReference.child ( "chats" ).child ( uid ).child ( userModel.getUid () ).push ().getKey ();
-
-        chatModel chatModel = new chatModel ( msg, myModel.getUsername (), myModel.getImageURL (), "05:00 pm", myModel.getUid (), userModel.getUid (), key );
+        String time = DateFormat.getTimeInstance ().format ( Calendar.getInstance ().getTime () );
+        chatModel chatModel = new chatModel ( msg, myModel.getUsername (), myModel.getImageURL (), time, myModel.getUid (), userModel.getUid (), key );
         chatModel.setType ( 0 );
 
         if (key != null) {
